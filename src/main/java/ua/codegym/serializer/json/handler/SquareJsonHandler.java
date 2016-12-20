@@ -1,21 +1,18 @@
-package ua.codegym.serializer.xml.handler;
+package ua.codegym.serializer.json.handler;
+
 
 import ua.codegym.serializer.Serializer;
-import ua.codegym.serializer.shape.AbstractShape;
-import ua.codegym.serializer.shape.Shape;
 import ua.codegym.serializer.shape.Square;
 
 import java.io.IOException;
 import java.io.OutputStream;
-import java.util.Arrays;
 
-public class SquareXmlHandler implements Serializer {
-
+public class SquareJsonHandler implements Serializer{
 
     public void serialize(Object shape, OutputStream os) {
         final Square square = (Square) shape;
         try {
-            os.write(("<square x=\""+square.getX()+"\" y=\""+square.getY()+"\" side=\""+square.getSide()+"\"></square>").getBytes());
+            os.write(("{\n\"shape\":\"square\",\n\"x\":"+square.getX()+",\n\"y\":"+square.getY()+",\n\"side\":"+square.getSide()+"\n}").getBytes());
         } catch (IOException e) {
             e.printStackTrace();
         }

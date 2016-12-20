@@ -10,4 +10,7 @@ public class Group extends AbstractShape {
   public void add(Shape shape) {
     shapes.add(shape);
   }
+  public List<Shape> getShapes() {
+    return shapes;
+  }
 }

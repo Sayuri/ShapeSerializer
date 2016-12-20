@@ -1,20 +1,21 @@
-package ua.codegym.serializer.xml.handler;
+package ua.codegym.serializer.json.handler;
 
 import ua.codegym.serializer.Serializer;
-import ua.codegym.serializer.shape.AbstractShape;
-import ua.codegym.serializer.shape.Shape;
+import ua.codegym.serializer.xml.handler.CircleXmlHandler;
+import ua.codegym.serializer.xml.handler.GroupXmlHandler;
+import ua.codegym.serializer.xml.handler.SquareXmlHandler;
 
 import java.io.OutputStream;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
-public class XmlSerializer implements Serializer {
-
+public class JsonSerializer implements Serializer {
     private static final Map<Class, Serializer> serializers = new HashMap<>();
 
     static {
-        register(new SquareXmlHandler());
-        register(new CircleXmlHandler());
-        register(new GroupXmlHandler());
+        register(new SquareJsonHandler());
+        register(new CircleJsonHandler());
+        register(new GroupJsonHandler());
     }
 
     private static void register(Serializer handler) {

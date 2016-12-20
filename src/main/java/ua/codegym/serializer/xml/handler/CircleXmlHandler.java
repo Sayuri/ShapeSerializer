@@ -1,27 +1,26 @@
 package ua.codegym.serializer.xml.handler;
 
 import ua.codegym.serializer.Serializer;
-import ua.codegym.serializer.shape.AbstractShape;
+import ua.codegym.serializer.shape.Circle;
 import ua.codegym.serializer.shape.Shape;
 import ua.codegym.serializer.shape.Square;
 
 import java.io.IOException;
 import java.io.OutputStream;
-import java.util.Arrays;
 
-public class SquareXmlHandler implements Serializer {
 
+public class CircleXmlHandler implements Serializer {
 
     public void serialize(Object shape, OutputStream os) {
-        final Square square = (Square) shape;
+        final Circle circle = (Circle) shape;
         try {
-            os.write(("<square x=\""+square.getX()+"\" y=\""+square.getY()+"\" side=\""+square.getSide()+"\"></square>").getBytes());
+            os.write(("<circle x=\""+circle.getX()+"\" y=\""+circle.getY()+"\" radius=\""+circle.getRadius()+"\"></circle>").getBytes());
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public Class getType() {
-        return Square.class;
+        return Circle.class;
     }
 }
