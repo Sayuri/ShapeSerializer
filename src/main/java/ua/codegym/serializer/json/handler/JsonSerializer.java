@@ -9,7 +9,7 @@ import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-public class JsonSerializer implements Serializer {
+public class JsonSerializer extends Serializer {
     private static final Map<Class, Serializer> serializers = new HashMap<>();
 
     static {

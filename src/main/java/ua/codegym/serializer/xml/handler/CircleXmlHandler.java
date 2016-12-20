@@ -9,15 +9,11 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 
-public class CircleXmlHandler implements Serializer {
+public class CircleXmlHandler extends Serializer {
 
     public void serialize(Object shape, OutputStream os) {
         final Circle circle = (Circle) shape;
-        try {
-            os.write(("<circle x=\""+circle.getX()+"\" y=\""+circle.getY()+"\" radius=\""+circle.getRadius()+"\"></circle>").getBytes());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        safePrint(os, "<circle x=\""+circle.getX()+"\" y=\""+circle.getY()+"\" radius=\""+circle.getRadius()+"\"></circle>");
     }
 
     public Class getType() {

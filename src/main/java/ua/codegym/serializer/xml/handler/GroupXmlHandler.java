@@ -9,25 +9,15 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Map;
 
-public class GroupXmlHandler implements Serializer{
+public class GroupXmlHandler extends Serializer {
 
     public void serialize(Object shape, OutputStream os) {
-        Serializer xml = SerializerFactory.newXmlSerializer();
+        final Serializer xml = SerializerFactory.newXmlSerializer();
         final Group group = (Group) shape;
 
-        try {
-            os.write(("<group>").getBytes());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        safePrint(os,"<group>");
         group.getShapes().forEach(shape1 -> xml.serialize(shape1, os));
-
-        try {
-            os.write(("</group>").getBytes());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        safePrint(os, "</group>");
     }
 
     public Class getType() {

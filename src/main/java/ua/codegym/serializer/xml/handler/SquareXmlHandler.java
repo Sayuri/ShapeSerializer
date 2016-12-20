@@ -9,16 +9,12 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Arrays;
 
-public class SquareXmlHandler implements Serializer {
+public class SquareXmlHandler extends Serializer {
 
 
     public void serialize(Object shape, OutputStream os) {
         final Square square = (Square) shape;
-        try {
-            os.write(("<square x=\""+square.getX()+"\" y=\""+square.getY()+"\" side=\""+square.getSide()+"\"></square>").getBytes());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        safePrint(os, "<square x=\""+square.getX()+"\" y=\""+square.getY()+"\" side=\""+square.getSide()+"\"></square>");
     }
 
     public Class getType() {

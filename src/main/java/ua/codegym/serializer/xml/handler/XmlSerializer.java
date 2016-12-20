@@ -7,7 +7,7 @@ import ua.codegym.serializer.shape.Shape;
 import java.io.OutputStream;
 import java.util.*;
 
-public class XmlSerializer implements Serializer {
+public class XmlSerializer extends Serializer {
 
     private static final Map<Class, Serializer> serializers = new HashMap<>();
 
