@@ -1,9 +1,6 @@
 package ua.codegym.serializer.json.handler;
 
 import ua.codegym.serializer.Serializer;
-import ua.codegym.serializer.xml.handler.CircleXmlHandler;
-import ua.codegym.serializer.xml.handler.GroupXmlHandler;
-import ua.codegym.serializer.xml.handler.SquareXmlHandler;
 
 import java.io.OutputStream;
 import java.util.HashMap;

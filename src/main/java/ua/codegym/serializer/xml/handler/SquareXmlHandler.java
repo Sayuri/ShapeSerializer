@@ -1,13 +1,10 @@
 package ua.codegym.serializer.xml.handler;
 
 import ua.codegym.serializer.Serializer;
-import ua.codegym.serializer.shape.AbstractShape;
-import ua.codegym.serializer.shape.Shape;
 import ua.codegym.serializer.shape.Square;
 
 import java.io.IOException;
 import java.io.OutputStream;
-import java.util.Arrays;
 
 public class SquareXmlHandler implements Serializer {
 
