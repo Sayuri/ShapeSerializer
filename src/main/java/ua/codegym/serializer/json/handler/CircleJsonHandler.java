@@ -1,6 +1,5 @@
 package ua.codegym.serializer.json.handler;
 
-
 import ua.codegym.serializer.Serializer;
 import ua.codegym.serializer.shape.Circle;
 

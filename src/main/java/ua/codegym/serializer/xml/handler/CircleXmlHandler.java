@@ -3,7 +3,6 @@ package ua.codegym.serializer.xml.handler;
 import ua.codegym.serializer.Serializer;
 import ua.codegym.serializer.shape.Circle;
 
-import java.io.IOException;
 import java.io.OutputStream;
 
 
